@@ -1,0 +1,24 @@
+.container {
+    padding-top: 16px;
+}
+
+.intersection-item p {
+    margin-bottom: 8px;
+}
+
+.intersection-buttons {
+    margin-top: 10px;
+}
+
+.intersection-buttons button {
+    margin-right: 4px;
+}
+
+.intersection-add {
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.intersection-add h4 {
+    margin-bottom: 16px;
+}

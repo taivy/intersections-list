@@ -33,9 +33,8 @@ class Intersection extends Component {
   };
   render() {
     const { intersection } = this.props;
-    console.log("this.state.editing", this.state.editing);
     return (
-      <div>
+      <div className="intersection-item">
         <hr />
         {(this.state.editing) ? (
           <div>
@@ -71,9 +70,11 @@ class Intersection extends Component {
                 />
               </Form.Group>
             </Form>
-            <Button variant="danger" size="sm" onClick={this.onSaveClick}>
-              Save
-            </Button>
+            <div className="intersection-buttons">
+              <Button variant="success" size="sm" onClick={this.onSaveClick}>
+                Save
+              </Button>
+            </div>
           </div>
         ) : (
           <div>
@@ -88,12 +89,14 @@ class Intersection extends Component {
                 Streets: {intersection.streets}
               </p>
             </div>
-            <Button variant="secondary" size="sm" onClick={this.onEditClick}>
-              Edit
-            </Button>{" "}
-            <Button variant="danger" size="sm" onClick={this.onDeleteClick}>
-              Delete
-            </Button>
+            <div className="intersection-buttons">
+              <Button variant="primary" size="sm" onClick={this.onEditClick}>
+                Edit
+              </Button>{" "}
+              <Button variant="danger" size="sm" onClick={this.onDeleteClick}>
+                Delete
+              </Button>
+            </div>
           </div>
         )}
       </div>

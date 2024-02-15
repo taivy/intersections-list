@@ -29,7 +29,7 @@ class AddIntersection extends Component {
 
   render() {
     return (
-      <div style={{marginBottom: "36px"}}>
+      <div className="intersection-add">
         <h4>Add new intersection</h4>
         <Form>
           <Form.Group controlId="nameInput">
