@@ -22,14 +22,20 @@ class Intersection extends Component {
   onSaveClick = () => {
     const { intersection } = this.props;
     this.props.updateIntersection(intersection.id, {
-      name: intersection.name,
-      location: intersection.location,
-      streets: intersection.streets,
+      name: this.state.name,
+      location: this.state.location,
+      streets: this.state.streets,
     });
     this.setState({ editing: false });
   };
   onEditClick = () => {
+    const { intersection } = this.props;
     this.setState({ editing: true });
+    this.setState({
+      name: intersection.name,
+      location: intersection.location,
+      streets: intersection.streets,
+    });
   };
   render() {
     const { intersection } = this.props;
@@ -45,7 +51,7 @@ class Intersection extends Component {
                   type="text"
                   name="name"
                   placeholder="Enter name"
-                  value={intersection.name}
+                  value={this.state.name}
                   onChange={this.onChange}
                 />
               </Form.Group>
@@ -55,7 +61,7 @@ class Intersection extends Component {
                   as="textarea"
                   name="location"
                   placeholder="Enter location"
-                  value={intersection.location}
+                  value={this.state.location}
                   onChange={this.onChange}
                 />
               </Form.Group>
@@ -65,7 +71,7 @@ class Intersection extends Component {
                   as="textarea"
                   name="streets"
                   placeholder="Enter streets"
-                  value={intersection.streets}
+                  value={this.state.streets}
                   onChange={this.onChange}
                 />
               </Form.Group>
